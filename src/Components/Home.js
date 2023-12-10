@@ -103,8 +103,11 @@ const Home = () => {
       return;
     }
     const fileRef = ref(Storage, `audio/one.mp3`);
-    uploadBytes(fileRef, file).then(() => alert("Uploaded Done"));
-    setmsg("Uploaded Done");
+    uploadBytes(fileRef, file).then(() => {
+      alert("Uploaded Done");
+      setmsg("Uploaded Done");
+      console.log("Upload Done");
+    });
   };
   const handalLogOut = () => {
     localStorage.clear();
